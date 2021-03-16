@@ -1,0 +1,23 @@
+# clone ecom-webserive 
+
+git clone https://github.com/wahidKhan74/ecom-webservice.git
+
+# change directory
+
+cd ecom-webserive
+
+# build artifact as jar file
+
+mvn clean package    // this will give target dir with jar files
+
+# create a cutom java based image
+
+docker image build -t ecom-webservice .
+
+# run / verify image by creating container .
+
+docker container run --name ecom-webservice -p 8080:8081 -d ecom-webservice
+
+# run log
+docker container log <container-id>
+

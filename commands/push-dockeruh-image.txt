@@ -1,0 +1,21 @@
+# 1. create a docker file
+# 2. use docker file to build image
+# 3. verify image with contianer
+# 4. push image 
+
+// 1. create image tags
+
+docker tag phpcode:latest wahid74/php-webserver:v1.0.0
+
+docker tag phpcode:latest wahid74/php-webserver:v1.0.1
+
+docker tag phpcode:latest wahid74/php-webserver        -> this command will add tag as latest tag
+
+// 2. login in docker hub
+
+docker login 
+
+// 3. push image:tag
+docker push wahid74/php-webserver:v1.0.0
+docker push wahid74/php-webserver:v1.0.1
+docker push wahid74/php-webserver      -> this command will push image with tag as latest tag.

@@ -1,0 +1,12 @@
+# 1. create a docker file
+# 2. use docker file to build image
+
+# build image 
+-> docker build -t phpcode -f Dockerfile     // or
+-> docker build -t phpcode .
+
+
+# run docker phpcode container
+
+-> docker run --name phpcode-webserver -p 80:80 -d phpcode 
+-> docker ps -a

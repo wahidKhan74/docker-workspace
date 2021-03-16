@@ -1,0 +1,43 @@
+# dokcer version
+docker --version
+docker -v
+
+# docker info
+sudo docker info
+
+# docker pull -> docker image repositoty
+docker pull <imagename>
+-> docker pull alpine
+-> docker pull ubuntu
+
+# docker list images 
+docker images 
+
+# docker image deletion
+docker image rm <image-id>   -> one
+docker rmi $(docker images -a -q)  -> all unused
+
+# list all container
+docker ps -a  -> old
+docker contianer ls  -all
+
+
+# list running container
+docker ps  -> old
+docker contianer ls
+
+# sart container
+docker container start <container_id> or <container_name>
+
+# stop container
+docker contianer stop <container_id> or <container_name>
+
+# remove container
+docker contianer rm  <container_id> or <container_name>
+
+# remove container all stop 
+sudo docker rm -f -v $(sudo docker ps -a -q)
+
+
+# create / run / login
+docker run --name webserver-container -it ubuntu /bin/bash
