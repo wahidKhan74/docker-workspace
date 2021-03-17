@@ -1,0 +1,27 @@
+# first initialize docker swarm cluster
+-> docker swarm init
+
+# verify cluster nodes
+-> docker node ls
+
+# deploy docker custome imager based container to docker swarm
+-> docker service create -p 80:80 --name webserver phpcode 
+
+# list docker service
+docker service ls
+
+# verify service 
+curl localhost
+
+------------------------------------------------------
+2. scaling docker container on docker swarm
+------------------------------------------------------
+# increase the replica
+-> docker service scale webserver=3
+-> docker service ls
+# list running replica containers 
+-> docker service ps webserver
+# decrease replica
+docker service scale webserver=1
+
+
