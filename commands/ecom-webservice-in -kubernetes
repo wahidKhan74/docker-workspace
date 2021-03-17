@@ -1,0 +1,8 @@
+export PATH=$HOME/bin:$PATH
+# List all nodes
+kubectl get node
+
+#Create Kubernetes deployment pod
+kubectl run ecom-webservice2 --image=wahid74/ecom-webservice --port=8989
+kubectl expose deployment/ecom-webservice2 --port=8989 --target-port=8989 --type=LoadBalancer
+

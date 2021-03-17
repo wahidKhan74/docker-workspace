@@ -1,0 +1,14 @@
+# initialize kubernetese cluter
+-> kubeadm init
+# once kubernetese is initialized, configure kubernetese to start a cluster as normal
+-> mkdir -p $HOME/.kube
+-> sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+-> sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+# Alternatively, if you are the root user, you can run:
+export KUBECONFIG=/etc/kubernetes/admin.conf
+
+# After the cluster gets started, deploy a weave network to the cluster.
+
+export kubever=$(kubectl version | base64 | tr -d '\n')
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
